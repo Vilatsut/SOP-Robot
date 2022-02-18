@@ -15,6 +15,9 @@ controller_manager:
     jaw_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
+    r_shoulder_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
@@ -26,7 +29,6 @@ joint_state_broadcaster:
     - head_tilt_joint
     - waist_pan_joint
     - waist_roll_joint
-    - r_shoulder_lift_joint
     - r_upper_arm_roll_joint
     - r_elbow_flex_joint
     - r_shoulder_out_joint
@@ -130,4 +132,19 @@ jaw_controller:
 
     state_publish_rate: 1.0 # Defaults to 50
     action_monitor_rate: 1.0 # Defaults to 20
-    
+
+r_shoulder_controller:
+  ros__parameters:
+    joints:
+    - r_shoulder_lift_joint
+    write_op_modes:
+    - r_shoulder_lift_joint
+    interface_name: position
+
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+
+    state_publish_rate: 1.0 # Defaults to 50
+    action_monitor_rate: 1.0 # Defaults to 20

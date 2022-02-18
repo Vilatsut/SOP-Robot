@@ -8,7 +8,9 @@ fake_joint_driver_node:
         - head_tilt_vertical_joint
         - head_jaw_joint
         - eyes_shift_horizontal_joint
+        - r_shoulder_lift_joint
       values:
+        - 0.0
         - 0.0
         - 0.0
         - 0.0

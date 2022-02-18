@@ -23,3 +23,6 @@ eyes_shift_vertical_joint:
 
 head_jaw_joint:
   ID: 12
+
+r_shoulder_lift_joint:
+ ID: 21

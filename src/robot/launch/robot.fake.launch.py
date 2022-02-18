@@ -97,7 +97,7 @@ def generate_launch_description():
         [
             FindPackageShare("robot"),
             "controllers",
-            "head.yaml",
+            "head.yaml"
         ]
     )
 
@@ -162,6 +162,12 @@ def generate_launch_description():
         arguments=["jaw_controller", "-c", "/controller_manager"],
     )
 
+    shoulder_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_shoulder_controller", "-c", "/controller_manager"],
+    )
+
     nodes = [
         controller_manager_node,
         node_robot_state_publisher,
@@ -169,6 +175,7 @@ def generate_launch_description():
         rviz_node,
         head_fake_controller_spawner,
         eyes_fake_controller_spawner,
-        jaw_fake_controller_spawner
+        jaw_fake_controller_spawner,
+        shoulder_fake_controller_spawner
     ]
     return LaunchDescription(declared_arguments + nodes)
