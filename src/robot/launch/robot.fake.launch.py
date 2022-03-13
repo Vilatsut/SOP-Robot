@@ -94,13 +94,12 @@ def generate_launch_description():
     robot_description = {"robot_description": robot_description_content}
 
     rrbot_controllers = PathJoinSubstitution(
-        [
-            FindPackageShare("robot"),
-            "controllers",
-            "head.yaml",
-            "r_arm.yaml"
-        ]
-    )
+            [
+                FindPackageShare("robot"),
+                "controllers",
+                "head.yaml"        
+            ]
+        )
 
     node_robot_state_publisher = Node(
         package="robot_state_publisher",
