@@ -97,7 +97,8 @@ def generate_launch_description():
         [
             FindPackageShare("robot"),
             "controllers",
-            "head.yaml"
+            "head.yaml",
+            "r_arm.yaml"
         ]
     )
 
@@ -162,10 +163,46 @@ def generate_launch_description():
         arguments=["jaw_controller", "-c", "/controller_manager"],
     )
 
-    shoulder_fake_controller_spawner = Node(
+    r_upper_arm_fake_controller_spawner = Node(
         package="controller_manager",
         executable="spawner.py",
-        arguments=["r_shoulder_controller", "-c", "/controller_manager"],
+        arguments=["r_upper_arm_controller", "-c", "/controller_manager"],
+    )
+
+    r_lower_arm_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_lower_arm_controller", "-c", "/controller_manager"],
+    )
+
+    r_thumb_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_thumb_controller", "-c", "/controller_manager"],
+    )
+
+    r_index_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_index_controller", "-c", "/controller_manager"],
+    )
+
+    r_middle_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_middle_controller", "-c", "/controller_manager"],
+    )
+
+    r_ring_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_ring_controller", "-c", "/controller_manager"],
+    )
+    
+    r_pinky_fake_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["r_pinky_controller", "-c", "/controller_manager"],
     )
 
     nodes = [
@@ -176,6 +213,12 @@ def generate_launch_description():
         head_fake_controller_spawner,
         eyes_fake_controller_spawner,
         jaw_fake_controller_spawner,
-        shoulder_fake_controller_spawner
+        r_upper_arm_fake_controller_spawner,
+        r_lower_arm_fake_controller_spawner,
+        r_thumb_fake_controller_spawner,
+        r_index_fake_controller_spawner,
+        r_middle_fake_controller_spawner,
+        r_ring_fake_controller_spawner,
+        r_pinky_fake_controller_spawner
     ]
     return LaunchDescription(declared_arguments + nodes)
