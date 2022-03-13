@@ -132,19 +132,3 @@ jaw_controller:
 
     state_publish_rate: 1.0 # Defaults to 50
     action_monitor_rate: 1.0 # Defaults to 20
-
-r_shoulder_controller:
-  ros__parameters:
-    joints:
-    - r_shoulder_lift_joint
-    write_op_modes:
-    - r_shoulder_lift_joint
-    interface_name: position
-
-    command_interfaces:
-      - position
-    state_interfaces:
-      - position
-
-    state_publish_rate: 1.0 # Defaults to 50
-    action_monitor_rate: 1.0 # Defaults to 20
