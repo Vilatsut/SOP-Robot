@@ -50,7 +50,7 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          base_footprint:l_shoulder_out_joint
+          base_footprint:
             Alpha: 1
             Show Axes: false
             Show Trail: false
