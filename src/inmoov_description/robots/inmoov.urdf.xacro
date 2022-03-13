@@ -18,7 +18,6 @@
 
 <!-- Import ros2_control description -->
   <xacro:include filename="head.ros2_control.xacro" />
-  <xacro:include filename="r_arm.ros2_control.xacro" />
 
   <!--<xacro:rrbot parent="world" prefix="$(arg prefix)">
     <origin xyz="0 0 0" rpy="0 0 0" />
