@@ -1,3 +1,6 @@
+# LIMITS
+THUMB: 0=140 DEG, 1=230 DEG
+
 
 # Getting started
 
