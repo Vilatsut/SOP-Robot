@@ -3,6 +3,9 @@ controller_manager:
     # Can be bigger, should not break anything
     update_rate: 1  # Hz
 
+    r_hand_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
     r_pinky_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
@@ -69,6 +72,28 @@ joint_state_broadcaster:
     - l_pinky3_joint
     - l_pinky4_joint
     - l_wrist_roll_joint
+
+
+r_hand_controller:
+  ros_parameters:
+    joints:
+    - r_thumb_joint
+    - r_index_joint
+    - r_middle_joint
+    - r_ring_joint
+    - r_pinky_joint
+    write_op_modes:
+    - r_thumb_joint
+    - r_index_joint
+    - r_middle_joint
+    - r_ring_joint
+    - r_pinky_joint
+    interface_name: position
+
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
 
 
 head_controller:
