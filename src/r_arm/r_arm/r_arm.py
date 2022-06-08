@@ -1,8 +1,7 @@
 import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
-
-import FollowJointTrajectory
+from control_msgs.action import FollowJointTrajectory
 
 
 class RArmActionClient(Node):
@@ -12,12 +11,19 @@ class RArmActionClient(Node):
         self._action_client = ActionClient(self, FollowJointTrajectory, 'r_index_controller')
 
     def send_goal(self):
-        goal_msg = '''{trajectory: {
-            joint_names: [r_index_joint],
-            points: [{ 
-                positions: [1], time_from_start: { sec: 1, nanosec: 0 } 
-            }]
-        }}'''
+        goal_msg = FollowJointTrajectory()
+        
+        goal_msg.trajectory.joint_names = ["r_index_joint"]
+        goal_msg.trajectory.points[0].positions = [1]
+        goal_msg.trajectory.points[0].time_from_start.sec = 1
+        goal_msg.trajectory.points[0].time_from_start.nanosec = 0
+        
+        # goal_msg.trajectory = {
+        #     joint_names: [r_index_joint],
+        #     points: [{ 
+        #         positions: [1], time_from_start: { sec: 1, nanosec: 0 } 
+        #     }]
+        # }
 
 
         self._action_client.wait_for_server()
