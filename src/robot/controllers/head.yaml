@@ -135,15 +135,9 @@ jaw_controller:
 r_pinky_controller:
   ros__parameters:
     joints:
-    - r_pinky1_joint
     - r_pinky_joint
-    - r_pinky3_joint
-    - r_pinky4_joint
     write_op_modes:
-    - r_pinky1_joint
     - r_pinky_joint
-    - r_pinky3_joint
-    - r_pinky4_joint
     interface_name: position
 
     command_interfaces:
@@ -157,15 +151,9 @@ r_pinky_controller:
 r_ring_controller:
   ros__parameters:
     joints:
-    - r_ring1_joint
     - r_ring_joint
-    - r_ring3_joint
-    - r_ring4_joint
     write_op_modes:
-    - r_ring1_joint
     - r_ring_joint
-    - r_ring3_joint
-    - r_ring4_joint
     interface_name: position
 
     command_interfaces:
@@ -179,13 +167,9 @@ r_ring_controller:
 r_middle_controller:
   ros__parameters:
     joints:
-    - r_middle1_joint
     - r_middle_joint
-    - r_middle3_joint
     write_op_modes:
-    - r_middle1_joint
     - r_middle_joint
-    - r_middle3_joint
     interface_name: position
 
     command_interfaces:
@@ -199,13 +183,9 @@ r_middle_controller:
 r_index_controller:
   ros__parameters:
     joints:
-    - r_index1_joint
     - r_index_joint
-    - r_index3_joint
     write_op_modes:
-    - r_index1_joint
     - r_index_joint
-    - r_index3_joint
     interface_name: position
 
     command_interfaces:
@@ -219,13 +199,9 @@ r_index_controller:
 r_thumb_controller:
   ros__parameters:
     joints:
-    - r_thumb1_joint
     - r_thumb_joint
-    - r_thumb3_joint
     write_op_modes:
-    - r_thumb1_joint
     - r_thumb_joint
-    - r_thumb3_joint
     interface_name: position
 
     command_interfaces:

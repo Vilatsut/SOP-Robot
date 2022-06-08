@@ -42,50 +42,14 @@ r_shoulder_lift_joint:
  r_thumb_joint:
  ID: 31
 
- r_thumb1_joint:
- ID: 32
-
- r_thumb3_joint:
- ID: 33
-
  r_index_joint:
  ID: 34
-
- r_index1_joint:
- ID: 35
-
- r_index3_joint:
- ID: 36
 
  r_middle_joint:
  ID: 37
 
- r_middle1_joint:
- ID: 38
-
- r_middle3_joint:
- ID: 39
-
  r_ring_joint:
  ID: 40
 
- r_ring1_joint:
- ID: 41
-
- r_ring3_joint:
- ID: 42
-
- r_ring4_joint:
- ID: 43
-
  r_pinky_joint:
  ID: 44
-
- r_pinky1_joint:
- ID: 45
-
- r_pinky3_joint:
- ID: 46
-
- r_pinky4_joint:
- ID: 47
